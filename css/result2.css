@@ -1,0 +1,156 @@
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  color: #ccc;
+}
+
+clearfix {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  background: url('../images/resultBg.png') no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 83%;
+  height: 80%;
+  background: url('../images/resultContainerBg.png') no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container > .top {
+}
+
+.top > .left {
+  float: left;
+  width: 60%;
+  margin-top: 8%;
+  margin-left: 8%;
+  color: white;
+}
+
+.top > .left > .logo {
+  width: 60%;
+}
+
+.top > .left > .name {
+  margin-top: 14%;
+}
+
+.top > .left > .logo > img {
+  width: 100%;
+  height: 100%;
+}
+
+.top > .right {
+  float: right;
+  width: 20%;
+  margin-right: 4%;
+  margin-top: 4%;
+}
+
+.top > .right > img {
+  width: 100%;
+  height: 100%;
+}
+
+.container > .result {
+  width: 100%;
+  padding: 2% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.result > .row {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: white;
+}
+
+.result > .row > img {
+  width: 2rem;
+}
+
+.result > .row > .name {
+  margin-left: 4px;
+  width: 50%;
+}
+
+.result > .row > .wrapper {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.result > .row > .wrapper > .progress {
+  height: .5rem;
+  width: 50%;
+  margin: .2rem;
+  background: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.container > .text > img {
+  margin: 6% auto;
+  width: 50%;
+  display: block;
+}
+
+.container > .QRcode {
+  width: 20%;
+  margin-left: 79%;
+  margin-top: 3%;
+}
+
+.container > .QRcode > img {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button > img {
+  width: 50%;
+}
+
+.sharePic {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sharePic > img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>答题</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./css/game.css">
+  <script src="./js/rem.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/seeion.js"></script>
+</head>
+<body>
+  <div id="games">
+  
+  </div>
+  
+  <script>
+    $(function(){
+      $('body').on('touchstart',function(e){
+        e.preventDefault;
+      })
+      $('#game').css('height',$(window).height());
+      //防止键盘被覆盖
+      $('input').click(function(){
+        var target = this;
+        setTimeout(function(){
+          target.scrollIntoViewIfNeeded();
+          //  console.log('scrollIntoViewIfNeeded');
+        },400);
+      });
+      var arr = [
+        {
+          problem:'你现在所处的阶段是',
+          a:['A：正在二十岁','B、未满二十岁','C、假装二十岁',' D、N年前二十岁'],
+          option:[3,4,2,1],
+          i:1
+        },
+        {
+          problem:'早上出门前，你必须要做的一件事是',
+          a:['A：精致的妆容','B：刷朋友圈','C：喝水养生','D：审视自己的衣着'],
+          option:[4,2,3,1],
+          i:2
+        },
+        {
+          problem:'休闲时间的时候你会用来干嘛',
+          a:['A：健身','B：逛街 ','C: 聚会','D：画画'],
+          option:[1,4,3,2],
+          i:3
+        },
+        {
+          problem:'和朋友约会，你会选择做什么',
+          a:['A：下午茶',' B：KTV ','C:电影 ','D：展览'],
+          option:[2,4,3,1],
+          i:4
+        },
+        {
+          problem:'逛街时候，你的购买风格是什么',
+          a:['A：只选适合自己的','B：买热门的服装','C：选择便宜的','D：只是看看'],
+          option:[3,4,2,1],
+          i:5
+        },
+        {
+          problem:'对待美食，你的态度是',
+          a:['A：喜欢小众而精致的美食','B：看看当时的网红美食',' C：路边便宜小摊','D：自己制作的美食'],
+          option:[3,4,2,1],
+          i:6
+        }
+      ]
+      arr.sort(function(){ return Math.random()-0.5 });
+      let html =`
+      <div class="container" id="container">
+        <p>
+          <span class="order">1</span>/5
+        </p>
+        <div class="title">
+          <span class="order">1.</span>
+          <span class="content">${arr[0].problem}</span>
+        </div>
+        <div class="items">
+          <a href="javascript:void(0)" data-score="${arr[0].option[0]}">${arr[0].a[0]}</a>
+          <a href="javascript:void(0)" data-score="${arr[0].option[1]}">${arr[0].a[1]}</a>
+          <a href="javascript:void(0)" data-score="${arr[0].option[2]}">${arr[0].a[2]}</a>
+          <a href="javascript:void(0)" data-score="${arr[0].option[3]}">${arr[0].a[3]}</a>
+        </div>
+      </div>
+      `
+      $('#games').html(html)
+      let isSelect = false
+      let ic = 1
+      let scoreTotal = 0
+      $('#games').on('click', 'a', (event) => {
+        console.log(event.target)
+        score = parseInt($(event.target).attr('data-score'))
+        scoreTotal += score
+        sessionStorage.setItem('scoreTotal', scoreTotal)
+        isSelect = true
+        var clicktag = 0;//防止重复点击
+        if (isSelect) {
+          isSelect = false
+          ic += 1
+          setTimeout(function() {
+            if (ic < arr.length) {
+              html =`
+              <div class="container" id="container">
+                <p>
+                  <span class="order">${ic}</span>/5
+                </p>
+                <div class="title">
+                  <span class="order">${ic}.</span>
+                  <span class="content">${arr[ic].problem}</span>
+                </div>
+                <div class="items">
+                  <a href="javascript:void(0)" data-score="${arr[ic].option[0]}">${arr[ic].a[0]}</a>
+                  <a href="javascript:void(0)" data-score="${arr[ic].option[1]}">${arr[ic].a[1]}</a>
+                  <a href="javascript:void(0)" data-score="${arr[ic].option[2]}">${arr[ic].a[2]}</a>
+                  <a href="javascript:void(0)" data-score="${arr[ic].option[3]}">${arr[ic].a[3]}</a>
+                </div>
+              </div>
+              `
+              $('#games').html(html)
+            }else {
+              console.log(scoreTotal);
+              //分享好友后再次抽奖
+              location.assign('./result.html?wecha_id=dtcs?openid=oE6oPwbyoDrcSUTGshvKi9Kfoxok')
+            }
+          }, 800)
+        } else{
+          isSelect;
+          if( clicktag == 0){
+            setTimeout(function(){
+              clicktag =1;
+            },700);
+          }
+        }
+      })
+    })
+  </script>
+  <script>
+    //存入分数
+    const data = $.parseJSON(sessionStorage.getItem(('data')))
+    SaveScore(data.actid, data.userid, sessionStorage.getItem('scoreTotal'))
+  </script>
+</body>
+</html>

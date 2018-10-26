@@ -1,0 +1,83 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('../images/index.png') no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  left: 12%;
+  top: 30%;
+}
+
+.container > .turnplate {
+  width: 5rem;
+  height: 5rem;
+}
+
+.container > .turnplate > .pan {
+  width: 100%;
+  height: 100%;
+}
+
+.turnplate > .pointer {
+  width: 1.3rem;
+  height: 1.3rem;
+  position: absolute;
+  top: 35%;
+  left: 37%;
+}
+
+.win {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.win > div {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+}
+
+.win > div > img {
+  width: 100%;
+  height: 100%;
+}
+
+.win > div > .msg {
+  width: 90%;
+  position: absolute;
+  top: 20%;
+  left: 3%;
+  color: white;
+  font-size: 15px;
+}
+
+.win > div > a {
+  width: 1.7rem;
+  position: absolute;
+  bottom: 2%;
+  left: 22%;
+}
+
+.win > div > a > img {
+  width: 100%;
+}
+
+

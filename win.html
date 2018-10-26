@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>奖品</title>
+  <link rel="stylesheet" href="./css/win.css">
+  <script src="./js/rem.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/common.js"></script>
+  <script src="./js/seeion.js"></script>
+</head>
+<body>
+  <div class="container" style="display: block;">
+    <img src="./images/logo.png" alt="" class="logo">
+    <div class="left">
+      <img src="./images/wxHead.png" alt="">
+      <span class="name">微信昵称</span>
+    </div>
+    <div class="slider">
+      <div class="left">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-left"></use>
+        </svg>
+      </div>
+      <div class="picture">
+        <img src="./images/cup.png" alt="">
+      </div>
+      <div class="right">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-right"></use>
+        </svg>
+      </div>
+    </div>
+    <div class="winInfo">
+      <div class="secret">神秘奖品</div>
+      <form action="">
+        <div class="row">
+          <input type="text" name="" id="" placeholder="请由客服人员输入核销码">
+          <div class="button">
+            <a class="checked">
+              <img src="./images/checked.png" alt="">
+            </a>
+          </div>
+          
+        </div>
+        <a class="checked2" href=""  style="display: none;">
+          <img src="./images/checked2.png" alt="">
+        </a>
+      </form>
+      <div class="detail">
+        奖品详情 奖品详情 奖品详情 奖品详情 奖品详情
+      </div>
+    </div>
+    <a class="sure" href="./index.html?wecha_id=dtcs?openid=oE6oPwbyoDrcSUTGshvKi9Kfoxok">
+      <img src="./images/sure.png" alt="">
+    </a>
+  </div>
+  
+  <div class="win" style="display: none;">
+    <div>
+      <img src="./images/tip.png" alt="">
+      <div class="msg">核销失败, 请有客服人员输入正确核销码</div>
+      <a href="./win.html?wecha_id=dtcs?openid=oE6oPwbyoDrcSUTGshvKi9Kfoxok">
+        <img src="./images/sure.png" alt="">
+      </a>
+    </div>
+  </div>
+  <script>
+    $('.checked').click(()=>{
+      $('.win').show()
+    })
+  </script>
+  <script>
+    const data = $.parseJSON(sessionStorage.getItem('data'))
+    const imgurl = data.imgurl
+    const name = data.nickname
+    const userid = data.userid
+    $('.left > img')[0].setAttribute('src', imgurl)
+    $('.left > span.name').text(name)
+    const param = [
+      {
+        where: 'actid = '+actid + ' and userid = '+userAll[actid].userid,
+        order:"createtime desc",
+        field:"id,status,info"
+      }
+    ]
+    getResultInfo(actid, userid, param)
+    // console.log($.parseJSON(sessionStorage.getItem('resultData')));
+    // doCode(actid, userid, resultid, '666')
+  </script>+
+  <script src="//at.alicdn.com/t/font_884200_xwv9mewqkeq.js"></script>
+</body>
+</html>

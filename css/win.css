@@ -1,0 +1,195 @@
+.icon {
+  width: 100%; height: 100%;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: url('../images/winBg.png') no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > .logo {
+  width: 3.04rem;
+  height: .5rem;
+  position: absolute;
+  right: 3%;
+  top: 4%;
+}
+
+.container > .row {
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+
+.container >  .left {
+  padding-top: 5%;
+  padding-left: 5%;
+  color: white;
+  font-size: 14px;
+}
+
+.left > img {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: .2rem;
+}
+
+.container > .slider {
+  margin-top: 1rem;
+  width: 6.4rem;
+  height: 2.52rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider > .left,
+.slider > .right {
+  color: white;
+  width: .4rem;
+  height: .4rem;
+}
+
+.slider > .picture {
+  width: 3.65rem;
+  height: 2.5rem;
+}
+
+.slider > .picture > img {
+  width: 100%;
+  height: 100%;
+}
+
+.container > .winInfo {
+  margin-top: .2rem;
+  width: 5rem;
+  height: 2rem;
+  margin: 0 auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.winInfo > .secret {
+  color: white;
+  font-size: 20px;
+}
+
+.winInfo > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.11rem;
+  height: .57rem;
+  margin-bottom: .2rem;
+}
+
+.winInfo > form > .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winInfo > form > .row > input {
+  vertical-align: middle;
+}
+
+.winInfo > form > .row > .button > .checked {
+  display: block;
+  margin-top: -0.2rem;
+}
+
+.winInfo > form > .row > .button > .checked > img{
+  vertical-align: middle;
+  height: .5rem;
+}
+
+.winInfo > form > .checked2 {
+  height: .57rem;
+  margin-bottom: .6rem;
+}
+
+.winInfo > form img {
+  height: 100%;
+}
+
+.container > .sure {
+  display: block;
+  margin: 0 auto;
+}
+
+.winInfo > .detail {
+   font-size: 10px;
+   color: white;
+ }
+
+.sure > img {
+  width: 2rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.container > .backToIndex {
+  display: block;
+  margin: .6rem auto;
+}
+
+.win {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.win > div {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  top: 25%;
+  left: 25%;
+}
+
+.win > div > img {
+  width: 100%;
+  height: 100%;
+}
+
+.win > div > .msg {
+  width: 90%;
+  position: absolute;
+  top: 20%;
+  left: 3%;
+  color: white;
+  font-size: 15px;
+}
+
+.win > div > a {
+  width: 1.7rem;
+  position: absolute;
+  bottom: 2%;
+  left: 22%;
+}
+
+.win > div > a > img {
+  width: 100%;
+}
